@@ -4,26 +4,10 @@ import { Inter } from "next/font/google";
 import styles from "@/styles/Home.module.css";
 import React from "react";
 import Button from "@mui/material/Button";
-import {
-  Avatar,
-  Typography,
-  Paper,
-  List,
-  ListItem,
-  ListItemText,
-  createTheme,
-  ThemeProvider,
-  Grid,
-  TextField,
-  ButtonBase,
-  ButtonGroup,
-  IconButton,
-  Box,
-  Container,
-  Stack,
-} from "@mui/material";
+
 import { AccessAlarm, Diversity2, ThreeDRotation } from "@mui/icons-material";
 import Newest from "./newest";
+import Hot from "./hot";
 const inter = Inter({ subsets: ["latin"] });
 //https://mui.com/system/styled/
 export default function Home() {
@@ -37,6 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Newest />
+      <Hot />
     </div>
   );
 }

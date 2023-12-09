@@ -192,7 +192,7 @@ function Newest() {
         </Toolbar>
         <Toolbar
           sx={{
-            padding: "15px",
+            padding: "10px",
             backgroundColor: "var(--custom-color, #454549)",
           }}
         >
