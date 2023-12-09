@@ -1,7 +1,8 @@
 body {
   margin: 0;
-  padding: 0;
+  padding: 2%;
   box-sizing: border-box;
-  background-color: #000000; /* Đặt màu nền đen */
+  background-color: #161618; /* Đặt màu nền đen */
   color: #ffffff; /* Đặt màu chữ trắng */
+  align-items: center;
 }
