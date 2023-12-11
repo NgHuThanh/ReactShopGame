@@ -15,13 +15,13 @@ function Hot() {
       <Grid container sx={{ maxHeight: "698px", marginTop: "40px" }}>
         {/* Cột chứa ảnh bên trái */}
         <Grid item xs={7} md={5} sx={{ flexGrow: 1, component: "div" }}>
-          <Box p={2}>
+          <Button>
             <img
               src={leftImageSrc}
               alt="Ảnh bên trái"
               style={{ width: "100%", maxHeight: "698px" }}
             />
-          </Box>
+          </Button>
         </Grid>
 
         {/* Cột chứa 4 ảnh bên phải */}
@@ -75,16 +75,53 @@ function Hot() {
                 >
                   {src}
                 </Typography>
+                <Box
+                  component="div"
+                  sx={{
+                    position: "absolute",
+                    bottom: "80%",
+                    color: "gray.100", // Màu chữ gray-100
+                    backgroundColor: "#E35E26", // Màu nền #E35E26
+                    width: "15%",
+                    height: "15%",
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderTop: "none",
+                    borderTopRightRadius: "5px", // Bo tròn góc bên phải
+                    borderBottomRightRadius: "5px",
+                    borderLeft: "1px solid #fff", // Bo tròn góc bên phải
+                    fontSize: "1.5rem", // Kích thước chữ
+                  }}
+                >
+                  10%
+                </Box>
+                <Box
+                  component="div"
+                  sx={{
+                    position: "absolute",
+                    bottom: "85%",
+                    width: "98%",
+                    height: "15%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "right",
+                    borderTop: "none",
+                  }}
+                >
+                  <img src="/HotItem/IconHeart.svg" alt="Mô tả hình ảnh" />
+                </Box>
               </div>
 
-              <Grid container spacing={1}>
+              <Grid container spacing={0}>
                 {/* Box 1 */}
                 <Grid item xs={2}>
-                  <Box
-                    p={2}
+                  <Button
                     sx={{
                       borderRadius: "0 0 10px 10px", // Bo tròn hai đáy
-                      height: "30%",
+                      height: "100%",
+                      width: "80%",
                       border: "1px solid #F4F4F4",
                       textAlign: "center",
                       display: "flex",
@@ -92,17 +129,25 @@ function Hot() {
                       justifyContent: "center",
                     }}
                   >
-                    <img src="/HotItem/SteamIcon.svg" alt="Mô tả hình ảnh" />
-                  </Box>
+                    <img
+                      src="/HotItem/SteamIcon.svg"
+                      style={{
+                        width: "50%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của container
+                        // Độ rộng tối đa là 80%
+                        // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
+                        // Loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                      }}
+                    />
+                  </Button>
                 </Grid>
 
                 {/* Box 2 */}
                 <Grid item xs={2}>
-                  <Box
-                    p={2}
+                  <Button
                     sx={{
                       borderRadius: "0 0 10px 10px", // Bo tròn hai đáy
-                      height: "30%",
+                      height: "100%",
+                      width: "0.8",
                       border: "1px solid #F4F4F4",
                       textAlign: "center",
                       display: "flex",
@@ -110,44 +155,59 @@ function Hot() {
                       justifyContent: "center",
                     }}
                   >
-                    <img src="/HotItem/Epic.svg" alt="Mô tả hình ảnh" />
-                  </Box>
+                    <img
+                      src="/HotItem/Epic.svg"
+                      style={{
+                        width: "50%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của container
+                        // Độ rộng tối đa là 80%
+                        // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
+                        // Loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                      }}
+                    />
+                  </Button>
                 </Grid>
                 {/* Box 3 */}
-                <Grid item xs={4}>
-                  <Box
-                    p={2}
+                <Grid item xs={5}>
+                  <Button
                     sx={{
                       borderRadius: "0 0 10px 10px", // Bo tròn hai đáy
-                      height: "30%",
+                      height: "1",
+                      width: "0.8",
                       border: "1px solid #F4F4F4",
                       textAlign: "center",
                       display: "flex",
+                      alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <img src="/HotItem/Cart.svg" alt="Mô tả hình ảnh" />
+                    <img
+                      src="/HotItem/Cart.svg"
+                      style={{
+                        width: "20%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của container
+                        // Độ rộng tối đa là 80%
+                        // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
+                        // Loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                      }}
+                    />
                     <Typography
                       variant="h6" // Chọn variant phù hợp với kích thước chữ bạn muốn
                       sx={{
                         fontWeight: "bold", // Đặt chữ in đậm
-                        fontSize: "13px", // Màu vàng (mã màu hex cho màu vàng)
-                        display: "flex",
-
-                        justifyContent: "center",
+                        fontSize: "12px",
+                        color: "white", // Màu vàng (mã màu hex cho màu vàng)
                       }}
                     >
                       Add to cart
                     </Typography>
-                  </Box>
+                  </Button>
                 </Grid>
-                <Grid item xs={2}>
+                <Grid item xs={1}>
                   <Typography
                     variant="h6" // Chọn variant phù hợp với kích thước chữ bạn muốn
                     sx={{
                       fontWeight: "bold", // Đặt chữ in đậm
                       color: "#FF9800",
-                      fontSize: "24px", // Màu vàng (mã màu hex cho màu vàng)
+                      fontSize: "200%", // Màu vàng (mã màu hex cho màu vàng)
                       textAlign: "center",
                       height: "100%",
                       display: "flex",
