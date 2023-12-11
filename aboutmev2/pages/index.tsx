@@ -10,6 +10,7 @@ import Newest from "./newest";
 import Hot from "./hot";
 import MySlide from "./slide";
 import MyBlog from "./blog";
+import Steam from "./steam";
 
 const inter = Inter({ subsets: ["latin"] });
 //https://mui.com/system/styled/
@@ -28,6 +29,8 @@ export default function Home() {
       <MySlide />
       <MySlide />
       <MyBlog />
+      <Steam />
+      <Steam />
     </div>
   );
 }
