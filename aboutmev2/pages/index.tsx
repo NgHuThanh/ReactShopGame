@@ -12,6 +12,8 @@ import MySlide from "./slide";
 import MyBlog from "./blog";
 import Steam from "./steam";
 import Bannel from "./bannel";
+import Bannel2 from "./bannel2";
+import Footer from "./footer";
 
 const inter = Inter({ subsets: ["latin"] });
 //https://mui.com/system/styled/
@@ -31,8 +33,10 @@ export default function Home() {
       <MySlide />
       <Bannel />
       <MyBlog />
+      <Bannel2 />
       <Steam />
       <Steam />
+      <Footer />
     </div>
   );
 }
