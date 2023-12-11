@@ -9,6 +9,7 @@ import { AccessAlarm, Diversity2, ThreeDRotation } from "@mui/icons-material";
 import Newest from "./newest";
 import Hot from "./hot";
 import MySlide from "./slide";
+import MyBlog from "./blog";
 
 const inter = Inter({ subsets: ["latin"] });
 //https://mui.com/system/styled/
@@ -25,6 +26,8 @@ export default function Home() {
       <Newest />
       <Hot />
       <MySlide />
+      <MySlide />
+      <MyBlog />
     </div>
   );
 }
