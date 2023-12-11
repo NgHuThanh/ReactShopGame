@@ -8,6 +8,8 @@ import Button from "@mui/material/Button";
 import { AccessAlarm, Diversity2, ThreeDRotation } from "@mui/icons-material";
 import Newest from "./newest";
 import Hot from "./hot";
+import MySlide from "./slide";
+
 const inter = Inter({ subsets: ["latin"] });
 //https://mui.com/system/styled/
 export default function Home() {
@@ -22,6 +24,7 @@ export default function Home() {
       </Head>
       <Newest />
       <Hot />
+      <MySlide />
     </div>
   );
 }

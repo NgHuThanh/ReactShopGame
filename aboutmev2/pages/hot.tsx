@@ -48,7 +48,8 @@ function Hot() {
                     src={src}
                     alt={`Ảnh ${index + 1}`}
                     style={{
-                      width: "100%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của container
+                      width: "100%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của
+                      height: "100%",
                       height: "auto", // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
                       display: "block", // Loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
                     }}
