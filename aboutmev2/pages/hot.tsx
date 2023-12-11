@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Box, Paper, Typography } from "@mui/material";
+import { Grid, Box, Paper, Typography, Button } from "@mui/material";
 import { Sofia } from "next/font/google";
 function Hot() {
   const leftImageSrc = "/HotItem/Hot1.png";
@@ -9,55 +9,74 @@ function Hot() {
     "/HotItem/Hot4.png",
     "/HotItem/Hot5.png",
   ];
+
   return (
     <>
       <Grid container sx={{ maxHeight: "698px", marginTop: "40px" }}>
         {/* Cột chứa ảnh bên trái */}
         <Grid item xs={7} md={5} sx={{ flexGrow: 1, component: "div" }}>
-          <Grid p={2}>
+          <Box p={2}>
             <img
               src={leftImageSrc}
               alt="Ảnh bên trái"
               style={{ width: "100%", maxHeight: "698px" }}
             />
-          </Grid>
+          </Box>
         </Grid>
 
         {/* Cột chứa 4 ảnh bên phải */}
         <Grid item container xs={12} md={7} spacing={3}>
           {rightImageSrcs.map((src, index) => (
             <Grid key={index} item xs={6}>
-              <Paper sx={{ border: "1px solid #F4F4F4", borderRadius: "0px" }}>
-                <div style={{ position: "relative" }}>
+              <div style={{ position: "relative" }}>
+                <Button
+                  sx={{
+                    padding: "0px",
+                    overflow: "hidden",
+                    height: "300px",
+                    width: "100%", // Đặt width thành 100% để nó căn chiều rộng theo container
+                    boxShadow: "0 0 10px rgba(0, 0, 0, 0.1)",
+                    backgroundImage: `url(${src})`, // Đường dẫn đến hình ảnh
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    position: "relative", // Đặt position để có thể thêm đường viền tương đối vào
+                    border: "1px solid #fff",
+                    borderRadius: "0px", // Đường viền 1px màu trắng
+                  }}
+                >
                   <img
                     src={src}
                     alt={`Ảnh ${index + 1}`}
                     style={{
-                      width: "100%",
-                      height: "298px",
+                      width: "100%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của container
+                      height: "auto", // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
+                      display: "block", // Loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
                     }}
                   />
-                  <Typography
-                    variant="h6"
-                    component="div"
-                    sx={{
-                      position: "absolute",
-                      bottom: "0px",
-                      color: "white",
+                </Button>
 
-                      backgroundColor: "rgba(0, 0, 0, 0.60)",
-                      width: "100%",
-                      height: "15%",
-                      textAlign: "center",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center", // Căn giữa theo chiều ngang
-                    }}
-                  >
-                    {src}
-                  </Typography>
-                </div>
-              </Paper>
+                <Typography
+                  variant="h6"
+                  component="div"
+                  sx={{
+                    position: "absolute",
+                    bottom: "-1px",
+                    color: "white",
+                    backgroundColor: "rgba(0, 0, 0, 0.60)",
+                    width: "99.5%",
+                    height: "15%",
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    border: "1px solid #fff",
+                    borderTop: "none", // Căn giữa theo chiều ngang
+                  }}
+                >
+                  {src}
+                </Typography>
+              </div>
+
               <Grid container spacing={1}>
                 {/* Box 1 */}
                 <Grid item xs={2}>
