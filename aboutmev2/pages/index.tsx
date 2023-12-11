@@ -11,6 +11,7 @@ import Hot from "./hot";
 import MySlide from "./slide";
 import MyBlog from "./blog";
 import Steam from "./steam";
+import Bannel from "./bannel";
 
 const inter = Inter({ subsets: ["latin"] });
 //https://mui.com/system/styled/
@@ -28,6 +29,7 @@ export default function Home() {
       <Hot />
       <MySlide />
       <MySlide />
+      <Bannel />
       <MyBlog />
       <Steam />
       <Steam />
