@@ -31,6 +31,13 @@ function Newest() {
     { label: "Game", src: "/MenuBarItem/CD.svg" },
     { label: "Accessories", src: "/MenuBarItem/CD.svg" },
   ];
+  const menuDivices = [
+    { label: "Console", src: "/MenuBarItem/CD.svg" },
+    { label: "PcMobile", src: "/MenuBarItem/TV.svg" },
+    { label: "Pundel", src: "/MenuBarItem/ThungPC.svg" },
+    { label: "Game", src: "/MenuBarItem/CD.svg" },
+    { label: "Accessories", src: "/MenuBarItem/Controler.svg" },
+  ];
 
   return (
     <>
@@ -60,64 +67,21 @@ function Newest() {
         </Toolbar>
         <Toolbar>
           <Box sx={{ display: { xs: "none", md: "flex" } }}>
-            <Button
-              color="inherit"
-              sx={{ marginRight: "20px", padding: "15px" }}
-            >
-              <img
-                src="/MenuBarItem/CD.svg"
-                alt="Mô tả hình ảnh"
-                style={{ width: "25px", height: "auto", marginRight: "10%" }}
-              />
-              Console
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ marginRight: "20px", padding: "15px" }}
-            >
-              <img
-                src="/MenuBarItem/TV.svg"
-                alt="Mô tả hình ảnh"
-                style={{ width: "25px", height: "auto", marginRight: "10%" }}
-              />
-              PcMobile
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ marginRight: "20px", padding: "15px" }}
-            >
-              {" "}
-              <img
-                src="/MenuBarItem/ThungPC.svg"
-                alt="Mô tả hình ảnh"
-                style={{ width: "25px", height: "auto", marginRight: "10%" }}
-              />
-              Pundel
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ marginRight: "20px", padding: "15px" }}
-            >
-              {" "}
-              <img
-                src="/MenuBarItem/CD.svg"
-                alt="Mô tả hình ảnh"
-                style={{ width: "25px", height: "auto", marginRight: "10%" }}
-              />
-              Game
-            </Button>
-            <Button
-              color="inherit"
-              sx={{ marginRight: "20px", padding: "15px" }}
-            >
-              {" "}
-              <img
-                src="/MenuBarItem/Controler.svg"
-                alt="Mô tả hình ảnh"
-                style={{ width: "25px", height: "auto", marginRight: "10%" }}
-              />
-              Accessories
-            </Button>
+            {menuItems.map((item, index) => (
+              <Button
+                key={index}
+                color="inherit"
+                sx={{ marginRight: "20px", padding: "15px" }}
+              >
+                <Box
+                  component="img"
+                  src={item.src}
+                  alt={`Mô tả hình ảnh ${index + 1}`}
+                  style={{ width: "25px", height: "auto", marginRight: "10%" }}
+                />
+                <Typography>{item.label}</Typography>
+              </Button>
+            ))}
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -134,7 +98,7 @@ function Newest() {
               onClose={closeMenu}
             >
               <MenuList>
-                {menuItems.map((item, index) => (
+                {menuDivices.map((item, index) => (
                   <MenuItem key={index}>
                     <Box
                       component="img"
@@ -159,57 +123,28 @@ function Newest() {
             backgroundColor: "var(--custom-color, #454549)",
           }}
         >
-          <Box>
-            <Button color="inherit" sx={{ marginRight: "70px" }}>
-              <div>
-                <img
-                  src="/MenuBarItem/PS5.svg"
-                  alt="Mô tả hình ảnh"
-                  style={{ width: "90px", height: "30px" }}
-                />
-                <Typography sx={{ marginTop: "10px" }}>(202 Items)</Typography>
-              </div>
-            </Button>
-            <Button color="inherit" sx={{ marginRight: "70px" }}>
-              <div>
-                <img
-                  src="/MenuBarItem/PS4.svg"
-                  alt="Mô tả hình ảnh"
-                  style={{ width: "90px", height: "30px" }}
-                />
-                <Typography sx={{ marginTop: "10px" }}>(202 Items)</Typography>
-              </div>
-            </Button>
-            <Button color="inherit" sx={{ marginRight: "70px" }}>
-              <div>
-                <img
-                  src="/MenuBarItem/PS3.svg"
-                  alt="Mô tả hình ảnh"
-                  style={{ width: "90px", height: "30px" }}
-                />
-                <Typography sx={{ marginTop: "10px" }}>(202 Items)</Typography>
-              </div>
-            </Button>
-            <Button color="inherit" sx={{ marginRight: "70px" }}>
-              <div>
-                <img
-                  src="/MenuBarItem/Xbox.svg"
-                  alt="Mô tả hình ảnh"
-                  style={{ width: "90px", height: "30px" }}
-                />
-                <Typography sx={{ marginTop: "10px" }}>(202 Items)</Typography>
-              </div>
-            </Button>
-            <Button color="inherit" sx={{ marginRight: "70px" }}>
-              <div>
-                <img
-                  src="/MenuBarItem/Xbox.svg"
-                  alt="Mô tả hình ảnh"
-                  style={{ width: "90px", height: "30px" }}
-                />
-                <Typography sx={{ marginTop: "10px" }}>(202 Items)</Typography>
-              </div>
-            </Button>
+          <Box sx={{ display: "flex" }}>
+            {menuItems.map((item, index) => (
+              <Button key={index} color="inherit" sx={{ marginRight: "70px" }}>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    alignItems: "center",
+                  }}
+                >
+                  <Box
+                    component="img"
+                    src={item.src}
+                    alt={`Mô tả hình ảnh ${index + 1}`}
+                    style={{ width: "90px", height: "30px" }}
+                  />
+                  <Typography sx={{ marginTop: "10px" }}>
+                    (202 Items)
+                  </Typography>
+                </Box>
+              </Button>
+            ))}
           </Box>
         </Toolbar>
       </AppBar>
