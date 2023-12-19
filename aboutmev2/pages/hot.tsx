@@ -9,14 +9,13 @@ function Hot() {
     "/HotItem/Hot4.png",
     "/HotItem/Hot5.png",
   ];
-
   return (
     <>
       <Grid container sx={{ maxHeight: "698px", marginTop: "40px" }}>
-        {/* Cột chứa ảnh bên trái */}
         <Grid item xs={7} md={5} sx={{ flexGrow: 1, component: "div" }}>
           <Button>
-            <img
+            <Box
+              component="img" // Sử dụng component="img" để bao quanh một thẻ <img>
               src={leftImageSrc}
               alt="Ảnh bên trái"
               style={{ width: "100%", maxHeight: "698px" }}
@@ -44,18 +43,17 @@ function Hot() {
                     borderRadius: "0px", // Đường viền 1px màu trắng
                   }}
                 >
-                  <img
+                  <Box
+                    component="img"
                     src={src}
                     alt={`Ảnh ${index + 1}`}
                     style={{
-                      width: "100%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của
+                      width: "100%",
                       height: "100%",
-                      height: "auto", // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
-                      display: "block", // Loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                      objectFit: "cover", // Để ảnh mở rộng để đảm bảo không có khoảng trắng
                     }}
                   />
                 </Button>
-
                 <Typography
                   variant="h6"
                   component="div"
@@ -111,7 +109,11 @@ function Hot() {
                     borderTop: "none",
                   }}
                 >
-                  <img src="/HotItem/IconHeart.svg" alt="Mô tả hình ảnh" />
+                  <Box
+                    component="img"
+                    src="/HotItem/IconHeart.svg"
+                    alt="Mô tả hình ảnh"
+                  />
                 </Box>
               </div>
 
@@ -130,13 +132,15 @@ function Hot() {
                       justifyContent: "center",
                     }}
                   >
-                    <img
+                    <Box
+                      component="img"
                       src="/HotItem/SteamIcon.svg"
                       style={{
-                        width: "50%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của container
-                        // Độ rộng tối đa là 80%
-                        // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
-                        // Loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                        width: "50%",
+                        maxWidth: "80%", // Độ rộng tối đa là 80%
+                        height: "auto", // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
+                        display: "block", // Để loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                        margin: "auto", // Để căn giữa hình ảnh trong container
                       }}
                     />
                   </Button>
@@ -156,13 +160,15 @@ function Hot() {
                       justifyContent: "center",
                     }}
                   >
-                    <img
+                    <Box
+                      component="img"
                       src="/HotItem/Epic.svg"
                       style={{
-                        width: "50%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của container
-                        // Độ rộng tối đa là 80%
-                        // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
-                        // Loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                        width: "50%",
+                        maxWidth: "80%", // Độ rộng tối đa là 80%
+                        height: "auto", // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
+                        display: "block", // Để loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                        margin: "auto", // Để căn giữa hình ảnh trong container
                       }}
                     />
                   </Button>
@@ -181,13 +187,15 @@ function Hot() {
                       justifyContent: "center",
                     }}
                   >
-                    <img
-                      src="/HotItem/Cart.svg"
+                    <Box
+                      component="img"
+                      src="/HotItem/Card.svg"
                       style={{
-                        width: "20%", // Đặt width thành 100% để hình ảnh mở rộng theo chiều rộng của container
-                        // Độ rộng tối đa là 80%
-                        // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
-                        // Loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                        width: "50%",
+                        maxWidth: "80%", // Độ rộng tối đa là 80%
+                        height: "auto", // Tự động tính toán chiều cao dựa trên tỷ lệ khung hình
+                        display: "block", // Để loại bỏ khoảng trắng dưới ảnh khi nó là phần tử inline
+                        margin: "auto", // Để căn giữa hình ảnh trong container
                       }}
                     />
                     <Typography

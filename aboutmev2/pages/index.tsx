@@ -17,6 +17,7 @@ import Footer from "./footer";
 
 const inter = Inter({ subsets: ["latin"] });
 //https://mui.com/system/styled/
+
 export default function Home() {
   //ssh-keygen -t ed255519 -C "email"
   return (

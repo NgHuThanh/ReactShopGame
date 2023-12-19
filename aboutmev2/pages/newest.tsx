@@ -24,6 +24,14 @@ function Newest() {
   const closeMenu = (event: MouseEvent<HTMLElement>) => {
     setAnchorNav(null);
   };
+  const menuItems = [
+    { label: "Console", src: "/MenuBarItem/CD.svg" },
+    { label: "Pc Mobile", src: "/MenuBarItem/CD.svg" },
+    { label: "Pundel", src: "/MenuBarItem/CD.svg" },
+    { label: "Game", src: "/MenuBarItem/CD.svg" },
+    { label: "Accessories", src: "/MenuBarItem/CD.svg" },
+  ];
+
   return (
     <>
       <AppBar
@@ -126,66 +134,21 @@ function Newest() {
               onClose={closeMenu}
             >
               <MenuList>
-                <MenuItem>
-                  <img
-                    src="/MenuBarItem/CD.svg"
-                    alt="Mô tả hình ảnh"
-                    style={{
-                      width: "25px",
-                      height: "auto",
-                      marginRight: "10%",
-                    }}
-                  />
-                  Console
-                </MenuItem>
-                <MenuItem>
-                  <img
-                    src="/MenuBarItem/CD.svg"
-                    alt="Mô tả hình ảnh"
-                    style={{
-                      width: "25px",
-                      height: "auto",
-                      marginRight: "10%",
-                    }}
-                  />
-                  Pc Mobile
-                </MenuItem>
-                <MenuItem>
-                  <img
-                    src="/MenuBarItem/CD.svg"
-                    alt="Mô tả hình ảnh"
-                    style={{
-                      width: "25px",
-                      height: "auto",
-                      marginRight: "10%",
-                    }}
-                  />
-                  Pundel
-                </MenuItem>
-                <MenuItem>
-                  <img
-                    src="/MenuBarItem/CD.svg"
-                    alt="Mô tả hình ảnh"
-                    style={{
-                      width: "25px",
-                      height: "auto",
-                      marginRight: "10%",
-                    }}
-                  />
-                  Game
-                </MenuItem>
-                <MenuItem>
-                  <img
-                    src="/MenuBarItem/CD.svg"
-                    alt="Mô tả hình ảnh"
-                    style={{
-                      width: "25px",
-                      height: "auto",
-                      marginRight: "10%",
-                    }}
-                  />
-                  Accessories
-                </MenuItem>
+                {menuItems.map((item, index) => (
+                  <MenuItem key={index}>
+                    <Box
+                      component="img"
+                      src={item.src}
+                      alt={`Mô tả hình ảnh ${index + 1}`}
+                      style={{
+                        width: "25px",
+                        height: "auto",
+                        marginRight: "10%",
+                      }}
+                    />
+                    {item.label}
+                  </MenuItem>
+                ))}
               </MenuList>
             </Menu>
           </Box>
